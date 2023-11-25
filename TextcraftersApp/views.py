@@ -1,8 +1,7 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
-from django.contrib.auth.hashers import make_password
-from django.contrib.auth.hashers import check_password
+from django.contrib.auth.hashers import make_password, check_password
 from TextCrafters.settings import MONGO_DB
 from collections import defaultdict
 import json
@@ -14,14 +13,14 @@ def register(request):
         user_collection = MONGO_DB['users']  # user 저장 collection
         # 이미 유저가 등록 되어 있는 경우
         if user_collection.find_one({'email': data['email']}):
-            return JsonResponse({'message': 'Email already registered'}, status=400)
+            return JsonResponse({'message': '이미 가입된 회원입니다.'}, status=400)
 
         # hashing 후 비번 저장
         hashed_password = make_password(data['password'])
         data['password'] = hashed_password
 
         user_collection.insert_one(data)
-        return JsonResponse({'message': 'User registered successfully'}, status=201)
+        return JsonResponse({'message': '회원가입을 성공적으로 완료하였습니다.'}, status=201)
 
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
@@ -34,9 +33,9 @@ def login(request):
         user_collection = MONGO_DB['users']
         user = user_collection.find_one({'email': data['email']})
         if user and check_password(data['password'], user['password']):
-            return JsonResponse({'message': 'Login successful'}, status=200)
+            return JsonResponse({'message': '로그인에 성공하였습니다.'}, status=200)
         else:
-            return JsonResponse({'message': 'Invalid credentials'}, status=401)
+            return JsonResponse({'message': '로그인에 실패하였습니다.'}, status=401)
 
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
