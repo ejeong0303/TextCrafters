@@ -5,6 +5,7 @@ from django.contrib.auth.hashers import make_password, check_password
 from TextCrafters.settings import MONGO_DB
 from collections import defaultdict
 import json
+
 @csrf_exempt
 @require_http_methods(['POST'])
 def register(request):
