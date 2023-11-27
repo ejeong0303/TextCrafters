@@ -8,20 +8,24 @@ def calculate_similarity(keyword1, keyword2):
     return sm.ratio()
 
 def integrate_keywords(collection, restaurant, category, keyword1, keyword2):
-    # Keep keyword1 and delete keyword2
-    result = collection.delete_one({'restaurant': restaurant, 'category': category, 'keyword': keyword2})
-    print(f"Deleted {keyword2}, result: {result.deleted_count}")
+    # 둘 중 더 짧은 키워드를 저장할 수 있게
+    if keyword1 > keyword2:
+        result = collection.delete_one({'restaurant': restaurant, 'category': category, 'keyword': keyword1})
+        print(f"Deleted keyword1 longer {keyword1}, result: {result.deleted_count}")
+    else:
+        result = collection.delete_one({'restaurant': restaurant, 'category': category, 'keyword': keyword2})
+        print(f"Deleted keyword2 longer {keyword2}, result: {result.deleted_count}")
 
-# Connect to MongoDB
+# MongoDB 연결
 client = MongoClient('localhost', 27017)
 db = client.textcrafters
 collection = db.keywords
 
-# Fetch unique restaurants
+# db 내 데이터 'restaurant' tag로 탐색
 restaurants = collection.distinct('restaurant')
 print(f"Restaurants: {restaurants}")
 
-# Categories to process
+# Category로 탐색
 categories = ['price', 'service', 'taste', 'atmosphere']
 similarity_threshold = 0.7
 
