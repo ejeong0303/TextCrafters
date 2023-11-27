@@ -7,4 +7,5 @@ urlpatterns = [
     path('api/register/', views.register, name='register'),
     path('api/login/', views.login, name='login'),
     path('api/keywords/', views.get_keywords, name='get_keywords'),
+    path('api/review/', views.generate_review, name='generate_review'),
 ]
