@@ -15,8 +15,8 @@ import openai
 1. Front-End 서버에서 username, email, password를 담은 json파일을 Back-End 서버로 전송
 형식: 
 {
-  "username": "최이정",
-  "email": "ejeong100@gmail.com",
+  "username": "aaa",
+  "email": "aaa@gmail.com",
   "password": "pbkdf2_sha256$390000$BsNmd9HY3xOTWCji07qvHB$WuYGYbNyMfC4Tybx2AjYG7hbBifwy+1zuqsAjreZ2mc="
 }
 
@@ -54,8 +54,8 @@ def register(request):
 1. Front-End 서버에서 email, password 담은 json파일 Back-End 서버로 전송
 형식: 
 {
-    "email": "ejeong100@gmail.com",
-    "password": "ejeong"
+    "email": "aaa@gmail.com",
+    "password": "aaa"
 }
 
 2. Back-End 서버에서 리뷰 담은 json파일 Front-End 서버로 전송
