@@ -4,7 +4,8 @@
 ## Rest API 사용법
 
 
-### 1. 회원가입 REST API: URL: http://localhost:8000/api/register/ 
+### 1. 회원가입 REST API: 
+#### URL: http://localhost:8000/api/register/ 
 
 #### (1) Front-End 서버에서 username, email, password를 담은 json파일을 Back-End 서버로 전송
 ##### 형식: 
@@ -23,7 +24,8 @@
 
 
 <br><br/>
-### 2. 로그인 REST API: URL: http://localhost:8000/api/login/
+### 2. 로그인 REST API: 
+#### URL: http://localhost:8000/api/login/
 
 #### (1) Front-End 서버에서 email, password 담은 json파일 Back-End 서버로 전송
 ##### 형식: 
@@ -41,7 +43,8 @@
 
 
 <br><br/>
-### 3. 키워드 REST API: URL: http://localhost:8000/api/keywords/
+### 3. 키워드 REST API: 
+#### URL: http://localhost:8000/api/keywords/
 
 #### (1) Front-End 서버에서 식당 이름 담은 json파일 Back-End 서버로 전송
 ##### 형식: 
@@ -88,7 +91,8 @@
 
 
 <br><br/>
-### 4. 리뷰 REST API: URL: http://localhost:8000/api/review/
+### 4. 리뷰 REST API: 
+#### URL: http://localhost:8000/api/review/
 
 #### (1) Front-End 서버에서 식당 이름, 키워드들, 리뷰 글자수 담은 json파일을 Back-End 서버로 전송
 ##### 형식: 
