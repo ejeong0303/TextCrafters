@@ -145,7 +145,7 @@ def get_keywords(request):
         for category, keywords in category_keywords.items():
             formatted_category = {
                 'category': category,
-                'keywords': [{'id': index + 1, 'label': keyword} for index, keyword in enumerate(keywords)]
+                'keywords': [{'value': index + 1, 'label': keyword} for index, keyword in enumerate(keywords)]
             }
             formatted_keywords.append(formatted_category)
 
@@ -157,7 +157,7 @@ def get_keywords(request):
 
 
 
-openai.api_key = "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"
+openai.api_key = "secret-key"
 
 '''
 ==== 리뷰 REST API: URL: http://localhost:8000/api/review/ ====

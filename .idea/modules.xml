@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TextCrafters_backend.iml" filepath="$PROJECT_DIR$/.idea/TextCrafters_backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TextCrafters.iml" filepath="$PROJECT_DIR$/.idea/TextCrafters.iml" />
     </modules>
   </component>
 </project>
